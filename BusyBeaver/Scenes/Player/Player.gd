@@ -31,7 +31,10 @@ func handleJump():
 		
 		# maybe we should add jump height instead of setting it?
 		velocity.y = -JUMP_HEIGHT
-		$AnimationPlayer.play("Jump")
+		if jump_counter == 1:
+			$AnimationPlayer.play("Jump")
+		else:
+			$AnimationPlayer.play("Double Jump")
 		
 func handleWalkInput():
 	if Input.is_action_pressed("ui_left"):
