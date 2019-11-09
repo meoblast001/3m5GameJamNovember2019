@@ -5,7 +5,7 @@ export var GRAVITY = 200.0
 export var SPEED = 400 # pixels / sec
 export var JUMP_HEIGHT = 400
 var screen_size
-var jump_timer : float
+var jump_counter = 0
 var walkAnimationPlaying : bool
 
 var velocity = Vector2()
@@ -22,11 +22,12 @@ func handleGravity(delta):
 	else:
 		velocity.y += delta * GRAVITY
 
-func handleJump(delta):
-	jump_timer += delta
+func handleJump():
+	if is_on_floor():
+		jump_counter = 0
 	
-	if jump_timer > 0.5 and Input.is_action_just_pressed("ui_up"):
-		jump_timer = 0
+	if jump_counter < 2 and Input.is_action_just_pressed("ui_up"):
+		jump_counter += 1
 		
 		# maybe we should add jump height instead of setting it?
 		velocity.y = -JUMP_HEIGHT
@@ -58,7 +59,7 @@ func handleWalkAnimation():
 func _physics_process(delta):
 	handleGravity(delta)
 	handleWalkInput()
-	handleJump(delta)
+	handleJump()
 	
 	handleWalkAnimation()
 		
