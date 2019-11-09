@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TileMaps/Outdoor_01.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMaps/Walls_Ground_Tilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,3 +32,6 @@ format = 1
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 69.3791, -73.4602 )
