@@ -18,3 +18,5 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+GRAVITY = 1000.0
+JUMP_HEIGHT = 300

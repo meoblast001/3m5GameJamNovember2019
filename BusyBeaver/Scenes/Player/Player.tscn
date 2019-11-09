@@ -12,12 +12,12 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 31.6346
-height = 2.45033
+radius = 29.7876
+height = 4.46413
 
-[node name="Player" type="RigidBody2D"]
-mode = 2
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
+JUMP_HEIGHT = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

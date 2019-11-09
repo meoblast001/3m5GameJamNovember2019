@@ -1,10 +1,13 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 # Declare member variables here. Examples:
-export var max_speed = 400 # pixels / sec
-export var acc = 50
+export var GRAVITY = 200.0
+export var SPEED = 400 # pixels / sec
+export var JUMP_HEIGHT = 400
 var screen_size
 var jump_timer : float
+
+var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,23 +16,35 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
-func _integrate_forces(state):
-	jump_timer += state.step
+func _physics_process(delta):
+	jump_timer += delta
+	velocity.y += delta * GRAVITY
 	
-	if Input.is_action_pressed("ui_right"):
-		if state.linear_velocity.x < max_speed:
-			state.apply_central_impulse(Vector2(min(max_speed - state.linear_velocity.x, acc), 0))
-	elif Input.is_action_pressed("ui_left"):
-		if state.linear_velocity.x > -max_speed:
-			state.apply_central_impulse(Vector2(max(-max_speed - state.linear_velocity.x, -acc), 0))
+	if Input.is_action_pressed("ui_left"):
+		velocity.x = -SPEED
+	elif Input.is_action_pressed("ui_right"):
+		velocity.x = SPEED
 	else:
-		if state.linear_velocity.x != 0:
-			state.apply_central_impulse(Vector2(-state.linear_velocity.x, 0))
+		velocity.x = 0
+	
+#	if Input.is_action_pressed("ui_right"):
+#		if state.linear_velocity.x < max_speed:
+#			state.apply_central_impulse(Vector2(min(max_speed - state.linear_velocity.x, acc), 0))
+#	elif Input.is_action_pressed("ui_left"):
+#		if state.linear_velocity.x > -max_speed:
+#			state.apply_central_impulse(Vector2(max(-max_speed - state.linear_velocity.x, -acc), 0))
+#	else:
+#		if state.linear_velocity.x != 0:
+#			state.apply_central_impulse(Vector2(-state.linear_velocity.x, 0))
 	if jump_timer > 0.5 and Input.is_action_just_pressed("ui_up"):
 		jump_timer = 0
-		state.apply_central_impulse(Vector2(0, -98))
+		velocity.y = -JUMP_HEIGHT
 	
-	if state.linear_velocity.length() > 0:
+	if velocity.length() > 0:
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
+		
+	# The second parameter of move_and_slide is the normal pointing up.
+	# In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
+	move_and_slide(velocity, Vector2(0, -1))
