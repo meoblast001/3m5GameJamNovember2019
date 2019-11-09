@@ -40,10 +40,12 @@ func _physics_process(delta):
 		jump_timer = 0
 		velocity.y = -JUMP_HEIGHT
 	
-	if velocity.length() > 0:
-		$AnimatedSprite.play()
+	if velocity.x != 0:
+		$Sprite.flip_h = velocity.x < 0
+		$AnimationPlayer.play("Walk")
 	else:
-		$AnimatedSprite.stop()
+		$AnimationPlayer.seek(0, true)
+		$AnimationPlayer.stop()
 		
 	# The second parameter of move_and_slide is the normal pointing up.
 	# In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
