@@ -4,8 +4,10 @@ extends KinematicBody2D
 export var GRAVITY = 200.0
 export var SPEED = 400 # pixels / sec
 export var JUMP_HEIGHT = 400
+export var IN_AIR_DELAY = 0.1
 var screen_size
 var jump_counter = 0
+var in_air_timer : float
 var walkAnimationPlaying : bool
 
 var velocity = Vector2()
@@ -22,18 +24,26 @@ func handleGravity(delta):
 	else:
 		velocity.y += delta * GRAVITY
 
-func handleJump():
+func handleJump(delta):
+	in_air_timer += delta
 	if is_on_floor():
 		jump_counter = 0
+		in_air_timer = 0
+	elif in_air_timer > IN_AIR_DELAY:
+		jump_counter = max(jump_counter, 1)
+		
 	
 	if jump_counter < 2 and Input.is_action_just_pressed("ui_up"):
+		print(jump_counter)
 		jump_counter += 1
 		
 		# maybe we should add jump height instead of setting it?
 		velocity.y = -JUMP_HEIGHT
 		if jump_counter == 1:
+			walkAnimationPlaying = false
 			$AnimationPlayer.play("Jump")
 		else:
+			walkAnimationPlaying = false
 			$AnimationPlayer.play("Double Jump")
 		
 func handleWalkInput():
@@ -62,7 +72,7 @@ func handleWalkAnimation():
 func _physics_process(delta):
 	handleGravity(delta)
 	handleWalkInput()
-	handleJump()
+	handleJump(delta)
 	
 	handleWalkAnimation()
 		
