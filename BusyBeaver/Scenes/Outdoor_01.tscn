@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TileMaps/Outdoor_01.tres" type="TileSet" id=1]
+[ext_resource path="res://TileMaps/Walls_Ground_Tilemap.tres" type="TileSet" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background Far 01" type="TileMap" parent="."]
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background Close 01" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -65516, 3, 458753, -65515, 3, 458753, -65514, 3, 458753, -65513, 3, 458753 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platforms" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="TileMap" parent="."]
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
