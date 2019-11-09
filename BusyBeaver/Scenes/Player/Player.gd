@@ -16,14 +16,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-
-func _physics_process(delta):
-	jump_timer += delta
+func handleGravity(delta):
 	if is_on_floor():
 		velocity.y = 0
 	else:
 		velocity.y += delta * GRAVITY
+
+func handleJump(delta):
+	jump_timer += delta
 	
+	if jump_timer > 0.5 and Input.is_action_just_pressed("ui_up"):
+		jump_timer = 0
+		
+		# maybe we should add jump height instead of setting it?
+		velocity.y = -JUMP_HEIGHT
+		$AnimationPlayer.play("Jump")
+		
+func handleWalkInput():
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 	elif Input.is_action_pressed("ui_right"):
@@ -31,15 +40,11 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 
-	if jump_timer > 0.5 and Input.is_action_just_pressed("ui_up"):
-		jump_timer = 0
-		
-		# maybe we should add jump height instead of setting it?
-		velocity.y = -JUMP_HEIGHT
-		$AnimationPlayer.play("Jump")
-	
+func handleWalkAnimation():
 	if velocity.x != 0:
 		$Sprite.flip_h = velocity.x < 0
+		
+		# that is: if no other animation is playing
 		if not $AnimationPlayer.is_playing():
 			walkAnimationPlaying = true
 			$AnimationPlayer.play("Walk")
@@ -48,6 +53,14 @@ func _physics_process(delta):
 			walkAnimationPlaying = false
 			$AnimationPlayer.seek(0, true)
 			$AnimationPlayer.stop()
+	
+
+func _physics_process(delta):
+	handleGravity(delta)
+	handleWalkInput()
+	handleJump(delta)
+	
+	handleWalkAnimation()
 		
 	# The second parameter of move_and_slide is the normal pointing up.
 	# In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
