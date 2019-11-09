@@ -76,3 +76,6 @@ __meta__ = {
 "anims/Double Jump" = SubResource( 5 )
 anims/Jump = SubResource( 4 )
 anims/Walk = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
