@@ -90,7 +90,6 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 8
-frame = 7
 __meta__ = {
 "_edit_lock_": true
 }
@@ -106,6 +105,7 @@ current = true
 
 [node name="InventoryScript" type="Node" parent="."]
 script = ExtResource( 3 )
+
 [node name="Torch" type="Sprite" parent="."]
 position = Vector2( 0, -40 )
 texture = ExtResource( 4 )
