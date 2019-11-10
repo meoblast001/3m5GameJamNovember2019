@@ -288,8 +288,8 @@ tile_data = PoolIntArray( 262142, 0, 0, 327678, 0, 0, 393214, 0, 0 )
 position = Vector2( -131.815, 640.899 )
 shape = SubResource( 1 )
 [connection signal="activation_changed" from="SwitchGroup1/Switch" to="SwitchGroup1/ToggledNodes" method="_toggle_nodes"]
-[connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
+[connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup3/Switch" to="SwitchGroup3/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup4/Switch" to="SwitchGroup4/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
