@@ -113,3 +113,6 @@ func _physics_process(delta):
 	# The second parameter of move_and_slide is the normal pointing up.
 	# In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
 	move_and_slide(velocity, Vector2(0, -1))
+
+func _on_Item_picked_up(item: Item):
+	$"InventoryScript".pickup(item)
