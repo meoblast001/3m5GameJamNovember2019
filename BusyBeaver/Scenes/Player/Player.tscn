@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Beaver.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Assets/torch.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/TorchLight/TorchLight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/chainsaw.png" type="Texture" id=6]
+[ext_resource path="res://Assets/BG Music/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/SFX/sfx_movement_jump1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/SFX/sfx_sounds_falling2.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.6609
@@ -108,6 +111,7 @@ current = true
 script = ExtResource( 3 )
 
 [node name="Torch" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -40 )
 texture = ExtResource( 4 )
 hframes = 2
@@ -134,3 +138,15 @@ color = Color( 1, 1, 1, 0.196078 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="SFX-Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+pitch_scale = 0.75
+
+[node name="SFX-Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+pitch_scale = 0.75

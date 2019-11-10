@@ -266,8 +266,8 @@ tile_data = PoolIntArray( 1048660, 1, 131074, 1048661, 1, 131075 )
 [connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup3/Switch" to="SwitchGroup3/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup4/Switch" to="SwitchGroup4/ToggledNodes" method="_toggle_nodes"]
-[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes2" method="_toggle_nodes"]
+[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
 
 [editable path="GameEssentials"]
 
