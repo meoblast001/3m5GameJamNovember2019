@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="3m5GameJamNovember2019"
+run/main_scene="res://Scenes/turing-test-level.tscn"
 config/icon="res://icon.png"
 
 [input]
