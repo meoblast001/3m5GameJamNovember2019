@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Beaver.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Assets/torch.png" type="Texture" id=4]
+[ext_resource path="res://Assets/chainsaw.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.6609
@@ -104,3 +106,27 @@ current = true
 
 [node name="InventoryScript" type="Node" parent="."]
 script = ExtResource( 3 )
+[node name="Torch" type="Sprite" parent="."]
+position = Vector2( 0, -40 )
+texture = ExtResource( 4 )
+hframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Chainsaw" type="Sprite" parent="."]
+position = Vector2( 0, -40 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemIndicator" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -55.0
+margin_right = 15.0
+margin_bottom = -25.0
+color = Color( 1, 1, 1, 0.196078 )
+__meta__ = {
+"_edit_lock_": true
+}
