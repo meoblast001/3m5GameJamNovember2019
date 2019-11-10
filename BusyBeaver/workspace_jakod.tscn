@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/ItemManager.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/level-01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Items/Torch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Items/Chainsaw.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ItemManager" type="Node" parent="." groups=[
+"ItemManager",
+]]
+script = ExtResource( 1 )
+
+[node name="World" type="Node" parent="."]
+
+[node name="Floor" parent="World" instance=ExtResource( 2 )]
+position = Vector2( 295.067, 473.136 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 210.257, 421.954 )
+collision_mask = 8
+
+[node name="Torch" parent="." instance=ExtResource( 4 )]
+
+[node name="Torch2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 543.927, 361.604 )
+
+[node name="Chainsaw" parent="." instance=ExtResource( 5 )]
