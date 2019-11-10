@@ -13,9 +13,9 @@ var in_air_timer : float
 var walkAnimationPlaying : bool
 var last_wall = 'none' # or left or right (maybe use enum)
 var last_jumped_wall = 'none' # or left or right (maybe use enum)
+var number_of_deaths = 0
 
 var start_pos = position
-
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -94,6 +94,7 @@ func handleWalkAnimation():
 	
 func handleDeath():
 	if position.y > DEATH_HEIGHT:
+		number_of_deaths += 1
 		reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
