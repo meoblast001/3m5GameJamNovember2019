@@ -102,6 +102,7 @@ func handleWalkAnimation():
 func handleDeath():
 	if position.y > DEATH_HEIGHT:
 		number_of_deaths += 1
+		$"SFX-Death".play()
 		reset()
 		
 func handleInventoryIndicator():
