@@ -27,6 +27,7 @@ func _ready():
 func reset():
 	position = start_pos
 	velocity = Vector2()
+	current_item = 'none'
 
 func handleGravity(delta):
 	if is_on_floor():
