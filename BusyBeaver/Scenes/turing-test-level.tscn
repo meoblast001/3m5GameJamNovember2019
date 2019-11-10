@@ -151,10 +151,22 @@ tile_data = PoolIntArray( -917366, 0, 2, -917365, 0, 2, -851830, 0, 2, -851829, 
 script = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
-position = Vector2( 3591.38, 656.094 )
+position = Vector2( 4317.37, 469.672 )
 
-[node name="Torch" parent="." instance=ExtResource( 16 )]
-position = Vector2( 3000, 361.604 )
+[node name="Torch_1" parent="." instance=ExtResource( 16 )]
+position = Vector2( 223.722, 735.399 )
+
+[node name="Torch_2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 287.652, 735.399 )
+
+[node name="Torch_3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4384.62, 479.519 )
+
+[node name="Torch_4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4255.4, 225.719 )
+
+[node name="Torch_5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4384.62, 224.945 )
 
 [node name="Chainsaw" parent="." instance=ExtResource( 17 )]
-position = Vector2( 3100, 361.604 )
+position = Vector2( 4318.71, 225.418 )

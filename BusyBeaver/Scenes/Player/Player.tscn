@@ -106,6 +106,7 @@ current = true
 
 [node name="InventoryScript" type="Node" parent="."]
 script = ExtResource( 3 )
+
 [node name="Torch" type="Sprite" parent="."]
 position = Vector2( 0, -40 )
 texture = ExtResource( 4 )
