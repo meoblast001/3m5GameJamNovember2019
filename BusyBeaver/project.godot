@@ -42,6 +42,10 @@ config/name="3m5GameJamNovember2019"
 run/main_scene="res://Scenes/turing-test-level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+score="*res://Scenes/Player/score.gd"
+
 [input]
 
 ui_up={
