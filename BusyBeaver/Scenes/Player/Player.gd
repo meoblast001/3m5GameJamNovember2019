@@ -14,6 +14,7 @@ var walkAnimationPlaying : bool
 var last_wall = 'none' # or left or right (maybe use enum)
 var last_jumped_wall = 'none' # or left or right (maybe use enum)
 var number_of_deaths = 0
+var current_item = 'none'
 
 var start_pos
 var velocity = Vector2()
@@ -100,6 +101,21 @@ func handleDeath():
 	if position.y > DEATH_HEIGHT:
 		number_of_deaths += 1
 		reset()
+		
+func handleInventoryIndicator():
+	match current_item:
+		'torch':
+			$Torch.show()
+			$Chainsaw.hide()
+			$ItemIndicator.show()
+		'chainsaw':
+			$Torch.hide()
+			$Chainsaw.show()
+			$ItemIndicator.show()
+		'none':
+			$Torch.hide()
+			$Chainsaw.hide()
+			$ItemIndicator.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -107,6 +123,7 @@ func _physics_process(delta):
 	handleGravity(delta)
 	handleWalkInput()
 	handleJump(delta)
+	handleInventoryIndicator()
 	
 	handleWalkAnimation()
 		
