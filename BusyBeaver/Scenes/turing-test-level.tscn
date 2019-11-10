@@ -26,6 +26,9 @@
 [node name="Player" parent="GameEssentials" index="0"]
 position = Vector2( 261.077, 533.692 )
 
+[node name="CanvasModulate" parent="GameEssentials" index="1"]
+visible = false
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 
@@ -170,12 +173,12 @@ position = Vector2( 4384.62, 224.945 )
 position = Vector2( 4318.71, 225.418 )
 
 [node name="SwitchGroup1" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup1" instance=ExtResource( 17 )]
 position = Vector2( 576.001, 572.76 )
 
 [node name="ToggledNodes" parent="SwitchGroup1" instance=ExtResource( 18 )]
+editor/display_folded = true
 negate_activation = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup1/ToggledNodes/Subjects" index="0"]
@@ -185,63 +188,76 @@ format = 1
 tile_data = PoolIntArray( 1376285, 2, 65544, 1441821, 2, 9, 1507357, 2, 65544 )
 
 [node name="SwitchGroup2" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup2" instance=ExtResource( 17 )]
 position = Vector2( 3520.4, 510.107 )
 
 [node name="ToggledNodes" parent="SwitchGroup2" instance=ExtResource( 18 )]
+editor/display_folded = true
 negate_activation = true
+
+[node name="Subjects" parent="SwitchGroup2/ToggledNodes" index="0"]
+editor/display_folded = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup2/ToggledNodes/Subjects" index="0"]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1245302, 1, 131074, 1245303, 1, 3, 1245304, 1, 3, 1245305, 1, 3, 1245306, 1, 131075 )
+tile_data = PoolIntArray( 1245302, 1, 131074, 1245303, 1, 4, 1245304, 1, 4, 1245305, 1, 4, 1245306, 1, 131075 )
 
 [node name="ToggledNodes2" parent="SwitchGroup2" instance=ExtResource( 18 )]
+editor/display_folded = true
 disabled_on_ready = true
+
+[node name="Subjects" parent="SwitchGroup2/ToggledNodes2" index="0"]
+editor/display_folded = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup2/ToggledNodes2/Subjects" index="0"]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 721017, 1, 131074, 721018, 1, 3, 721019, 1, 3, 721020, 1, 131075 )
+tile_data = PoolIntArray( 721017, 1, 131074, 721018, 1, 4, 721019, 1, 4, 721020, 1, 131075 )
 
 [node name="SwitchGroup3" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup3" instance=ExtResource( 17 )]
 position = Vector2( 4286.93, 318.255 )
 
 [node name="ToggledNodes" parent="SwitchGroup3" instance=ExtResource( 18 )]
+editor/display_folded = true
 disabled_on_ready = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup3/ToggledNodes/Subjects" index="0"]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 983148, 1, 131074, 983149, 1, 3, 983150, 1, 3, 983151, 1, 3, 983152, 1, 3, 983153, 1, 131075 )
+tile_data = PoolIntArray( 983148, 1, 131074, 983149, 1, 4, 983150, 1, 4, 983151, 1, 4, 983152, 1, 4, 983153, 1, 131075 )
 
 [node name="SwitchGroup4" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup4" instance=ExtResource( 17 )]
 position = Vector2( 3905.16, 159.344 )
 
 [node name="ToggledNodes" parent="SwitchGroup4" instance=ExtResource( 18 )]
+editor/display_folded = true
 negate_activation = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup4/ToggledNodes/Subjects" index="0"]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 327811, 2, 17, 393305, 2, 7, 393347, 2, 65551, 458841, 2, 6, 458883, 2, 65550, 524377, 2, 6, 589913, 2, 6, 655449, 2, 65542, 720985, 2, 6 )
+tile_data = PoolIntArray( 327811, 2, 16, 393305, 2, 7, 393347, 2, 65551, 458841, 2, 6, 458883, 2, 16, 524377, 2, 6, 589913, 2, 6, 655449, 2, 65542, 720985, 2, 6 )
 
 [node name="SwitchGroup5" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup5" instance=ExtResource( 17 )]
 position = Vector2( 2122.97, 188.418 )
 
 [node name="ToggledNodes" parent="SwitchGroup5" instance=ExtResource( 18 )]
+editor/display_folded = true
 negate_activation = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup5/ToggledNodes/Subjects" index="0"]
@@ -251,6 +267,7 @@ format = 1
 tile_data = PoolIntArray( 1310794, 1, 131074, 1310795, 1, 131075 )
 
 [node name="ToggledNodes2" parent="SwitchGroup5" instance=ExtResource( 18 )]
+editor/display_folded = true
 disabled_on_ready = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup5/ToggledNodes2/Subjects" index="0"]
@@ -263,8 +280,8 @@ tile_data = PoolIntArray( 1048660, 1, 131074, 1048661, 1, 131075 )
 [connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup3/Switch" to="SwitchGroup3/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup4/Switch" to="SwitchGroup4/ToggledNodes" method="_toggle_nodes"]
-[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes2" method="_toggle_nodes"]
+[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
 
 [editable path="GameEssentials"]
 
