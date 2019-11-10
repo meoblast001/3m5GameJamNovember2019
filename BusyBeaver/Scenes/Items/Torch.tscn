@@ -26,6 +26,7 @@ tracks/0/keys = {
 
 [node name="Torch" type="RigidBody2D" groups=[
 "torch",
+"torch_item",
 ]]
 position = Vector2( 341.997, 361.604 )
 input_pickable = true
