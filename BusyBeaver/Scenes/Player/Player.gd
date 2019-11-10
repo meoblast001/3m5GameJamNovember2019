@@ -15,11 +15,12 @@ var last_wall = 'none' # or left or right (maybe use enum)
 var last_jumped_wall = 'none' # or left or right (maybe use enum)
 var number_of_deaths = 0
 
-var start_pos = position
+var start_pos
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start_pos = position
 	screen_size = get_viewport_rect().size
 
 func reset():
