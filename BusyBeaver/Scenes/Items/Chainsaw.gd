@@ -7,7 +7,6 @@ signal chainsaw_picked_up
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"../ItemManager".wire_chainsaw(self)
 	emit_signal("spawned", self)
 	pass # Replace with function body.
 

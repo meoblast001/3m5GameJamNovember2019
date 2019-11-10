@@ -12,7 +12,10 @@ var chainsaw_scene: PackedScene = preload("res://Scenes/Items/Chainsaw.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for torch_item in get_tree().get_nodes_in_group("torch_item"):
+		wire_torch(torch_item)
+	for chainsaw_item in get_tree().get_nodes_in_group("chainsaw_item"):
+		wire_chainsaw(chainsaw_item)
 
 func spawn_torch(pos: Vector2):
 	var torch = torch_scene.instance()

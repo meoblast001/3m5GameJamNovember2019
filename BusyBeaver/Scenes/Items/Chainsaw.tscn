@@ -23,7 +23,9 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Chainsaw" type="RigidBody2D"]
+[node name="Chainsaw" type="RigidBody2D" groups=[
+"chainsaw_item",
+]]
 position = Vector2( 430.447, 361.604 )
 input_pickable = true
 collision_layer = 4
