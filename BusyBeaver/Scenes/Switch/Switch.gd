@@ -2,15 +2,17 @@ extends Node2D
 
 signal activation_changed(activated)
 
-var is_activated: bool = false
+var num_activation_attempts: int = 0
 
 func _on_Area2D_body_entered(body: PhysicsBody2D):
-	if !is_activated and body.is_in_group("torch"):
-		emit_signal("activation_changed", true)
-		is_activated = true
+	if body.is_in_group("torch"):
+		if num_activation_attempts == 0:
+			emit_signal("activation_changed", true)
+		num_activation_attempts += 1
 
 
 func _on_Area2D_body_exited(body: PhysicsBody2D):
-	if is_activated and body.is_in_group("torch"):
-		emit_signal("activation_changed", false)
-		is_activated = false
+	if body.is_in_group("torch"):
+		num_activation_attempts -= 1
+		if num_activation_attempts == 0:
+			emit_signal("activation_changed", false)
