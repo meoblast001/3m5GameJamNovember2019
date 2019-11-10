@@ -64,6 +64,7 @@ func handleJump(delta):
 		
 	if jump_counter < MAX_JUMP_COUNT and Input.is_action_just_pressed("ui_up"):
 		jump_counter += 1
+		$"SFX-Jump".play()
 		
 		velocity.y = -JUMP_HEIGHT
 		if jump_counter == 1:
