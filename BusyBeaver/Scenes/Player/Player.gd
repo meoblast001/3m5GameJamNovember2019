@@ -18,16 +18,22 @@ var current_item = 'none'
 
 var start_pos
 var velocity = Vector2()
+onready var score = get_node("/root/score")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	number_of_deaths = score.number_of_deaths
+	print(score.number_of_deaths, number_of_deaths, score)
+	$CanvasLayer/Label.text = "Deaths: " + String(number_of_deaths)
 	start_pos = position
 	screen_size = get_viewport_rect().size
 
 func reset():
-	position = start_pos
-	velocity = Vector2()
-	current_item = 'none'
+	get_tree().reload_current_scene()
+	# Old reset system
+	#position = start_pos
+	#velocity = Vector2()
+	#current_item = 'none'
 
 func handleGravity(delta):
 	if is_on_floor():
@@ -101,7 +107,7 @@ func handleWalkAnimation():
 	
 func handleDeath():
 	if position.y > DEATH_HEIGHT:
-		number_of_deaths += 1
+		score.number_of_deaths += 1
 		$"SFX-Death".play()
 		reset()
 		
