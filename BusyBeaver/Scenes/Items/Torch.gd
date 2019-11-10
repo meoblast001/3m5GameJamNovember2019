@@ -7,7 +7,6 @@ signal torch_picked_up
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"../ItemManager".wire_torch(self)
 	pass # Replace with function body.
 	
 func _on_pickup():
