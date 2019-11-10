@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/chainsaw.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.4532, 5.01804 )
+extents = Vector2( 28.906, 12.716 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "flicker"
@@ -27,13 +27,15 @@ tracks/0/keys = {
 position = Vector2( 430.447, 361.604 )
 input_pickable = true
 collision_layer = 4
+gravity_scale = 5.0
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.423981 )
+position = Vector2( 0, 2.304 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
@@ -41,6 +43,7 @@ autoplay = "flicker"
 anims/flicker = SubResource( 2 )
 
 [node name="PlayerCollisionArea" type="Area2D" parent="."]
+visible = false
 input_pickable = false
 collision_layer = 8
 collision_mask = 15
