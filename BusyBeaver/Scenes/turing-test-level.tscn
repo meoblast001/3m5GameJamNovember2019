@@ -209,7 +209,6 @@ format = 1
 tile_data = PoolIntArray( 721017, 1, 131074, 721018, 1, 3, 721019, 1, 3, 721020, 1, 131075 )
 
 [node name="SwitchGroup3" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup3" instance=ExtResource( 17 )]
 position = Vector2( 4286.93, 318.255 )
@@ -224,7 +223,6 @@ format = 1
 tile_data = PoolIntArray( 983148, 1, 131074, 983149, 1, 3, 983150, 1, 3, 983151, 1, 3, 983152, 1, 3, 983153, 1, 131075 )
 
 [node name="SwitchGroup4" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup4" instance=ExtResource( 17 )]
 position = Vector2( 3905.16, 159.344 )
@@ -239,13 +237,12 @@ format = 1
 tile_data = PoolIntArray( 327811, 2, 17, 393305, 2, 7, 393347, 2, 65551, 458841, 2, 6, 458883, 2, 65550, 524377, 2, 6, 589913, 2, 6, 655449, 2, 65542, 720985, 2, 6 )
 
 [node name="SwitchGroup5" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Switch" parent="SwitchGroup5" instance=ExtResource( 17 )]
 position = Vector2( 2122.97, 188.418 )
 
 [node name="ToggledNodes" parent="SwitchGroup5" instance=ExtResource( 18 )]
-disabled_on_ready = true
+negate_activation = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup5/ToggledNodes/Subjects" index="0"]
 tile_set = ExtResource( 14 )
@@ -254,7 +251,7 @@ format = 1
 tile_data = PoolIntArray( 1310794, 1, 131074, 1310795, 1, 131075 )
 
 [node name="ToggledNodes2" parent="SwitchGroup5" instance=ExtResource( 18 )]
-negate_activation = true
+disabled_on_ready = true
 
 [node name="TileMap" type="TileMap" parent="SwitchGroup5/ToggledNodes2/Subjects" index="0"]
 tile_set = ExtResource( 14 )
@@ -266,8 +263,8 @@ tile_data = PoolIntArray( 1048660, 1, 131074, 1048661, 1, 131075 )
 [connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup3/Switch" to="SwitchGroup3/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup4/Switch" to="SwitchGroup4/ToggledNodes" method="_toggle_nodes"]
-[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes" method="_toggle_nodes"]
+[connection signal="activation_changed" from="SwitchGroup5/Switch" to="SwitchGroup5/ToggledNodes2" method="_toggle_nodes"]
 
 [editable path="GameEssentials"]
 
