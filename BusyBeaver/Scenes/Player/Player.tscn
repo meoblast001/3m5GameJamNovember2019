@@ -85,7 +85,7 @@ collision_layer = 2
 collision_mask = 9
 script = ExtResource( 1 )
 GRAVITY = 2200.0
-SPEED = 350
+SPEED = 360
 JUMP_HEIGHT = 650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
