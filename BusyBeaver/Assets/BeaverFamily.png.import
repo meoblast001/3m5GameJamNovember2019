@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chainsaw.png-0ab768fd3ae4e67ec369e73656e09fe5.stex"
+path="res://.import/BeaverFamily.png-4566245a6113a7024c1b9fbf03dae480.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/chainsaw/chainsaw.png"
-dest_files=[ "res://.import/chainsaw.png-0ab768fd3ae4e67ec369e73656e09fe5.stex" ]
+source_file="res://Assets/BeaverFamily.png"
+dest_files=[ "res://.import/BeaverFamily.png-4566245a6113a7024c1b9fbf03dae480.stex" ]
 
 [params]
 

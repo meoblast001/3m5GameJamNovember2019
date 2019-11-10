@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Indicator.png-2b9852beeb98434884e1cf650aaf2ade.stex"
+path="res://.import/Indicator.png-22ecdcb7b84e06e36cfd51c06806b4d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/indicator/Indicator.png"
-dest_files=[ "res://.import/Indicator.png-2b9852beeb98434884e1cf650aaf2ade.stex" ]
+source_file="res://Assets/Indicator.png"
+dest_files=[ "res://.import/Indicator.png-22ecdcb7b84e06e36cfd51c06806b4d7.stex" ]
 
 [params]
 
