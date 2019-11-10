@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Beaver.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player/Inventory.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.6609
@@ -72,6 +73,8 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 9
 script = ExtResource( 1 )
 GRAVITY = 2200.0
 SPEED = 350
@@ -98,3 +101,6 @@ anims/Wall = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="InventoryScript" type="Node" parent="."]
+script = ExtResource( 3 )
