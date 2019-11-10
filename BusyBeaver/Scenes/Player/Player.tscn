@@ -3,11 +3,11 @@
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Beaver.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 19.6609
 height = 16.1334
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "Double Jump"
 length = 0.5
 tracks/0/type = "value"
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Jump"
 length = 0.5
 tracks/0/type = "value"
@@ -39,8 +39,7 @@ tracks/0/keys = {
 "values": [ 0, 4, 0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=4]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -62,7 +61,7 @@ JUMP_HEIGHT = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, -5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
@@ -73,6 +72,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Double Jump" = SubResource( 5 )
-anims/Jump = SubResource( 4 )
-anims/Walk = SubResource( 3 )
+"anims/Double Jump" = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Walk = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
