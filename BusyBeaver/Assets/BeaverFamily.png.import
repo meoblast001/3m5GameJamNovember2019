@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torch.png-25accebbb029ca8448bb557bcbf056bf.stex"
+path="res://.import/BeaverFamily.png-4566245a6113a7024c1b9fbf03dae480.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/torch/torch.png"
-dest_files=[ "res://.import/torch.png-25accebbb029ca8448bb557bcbf056bf.stex" ]
+source_file="res://Assets/BeaverFamily.png"
+dest_files=[ "res://.import/BeaverFamily.png-4566245a6113a7024c1b9fbf03dae480.stex" ]
 
 [params]
 

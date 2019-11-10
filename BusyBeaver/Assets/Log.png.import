@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Beaver.png-cdce0770c2e552c179c7597a862824ae.stex"
+path="res://.import/Log.png-32425ece900a01032fa71e67162cc43d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/Beaver.png"
-dest_files=[ "res://.import/Beaver.png-cdce0770c2e552c179c7597a862824ae.stex" ]
+source_file="res://Assets/Log.png"
+dest_files=[ "res://.import/Log.png-32425ece900a01032fa71e67162cc43d.stex" ]
 
 [params]
 

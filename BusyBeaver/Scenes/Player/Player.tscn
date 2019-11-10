@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://characters/player/Beaver.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Beaver.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.6609
@@ -55,6 +55,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "Wall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 GRAVITY = 2200.0
@@ -68,7 +84,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-hframes = 7
+hframes = 8
+frame = 7
 __meta__ = {
 "_edit_lock_": true
 }
@@ -77,6 +94,7 @@ __meta__ = {
 "anims/Double Jump" = SubResource( 2 )
 anims/Jump = SubResource( 3 )
 anims/Walk = SubResource( 4 )
+anims/Wall = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

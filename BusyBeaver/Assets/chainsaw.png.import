@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Log.png-08c67dc4652f73be1c5cd0a13442d593.stex"
+path="res://.import/chainsaw.png-6a989c24380c91e25723792227a5efef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/log/Log.png"
-dest_files=[ "res://.import/Log.png-08c67dc4652f73be1c5cd0a13442d593.stex" ]
+source_file="res://Assets/chainsaw.png"
+dest_files=[ "res://.import/chainsaw.png-6a989c24380c91e25723792227a5efef.stex" ]
 
 [params]
 

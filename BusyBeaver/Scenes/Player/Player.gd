@@ -57,6 +57,9 @@ func handleJump(delta):
 	# if in air too long that counts as the first jump (e.g. running off a cliff)
 	if in_air_timer > IN_AIR_DELAY:
 		jump_counter = max(jump_counter, 1)
+	elif last_wall != 'none':
+		walkAnimationPlaying = false
+		$AnimationPlayer.play("Wall")
 		
 	if jump_counter < MAX_JUMP_COUNT and Input.is_action_just_pressed("ui_up"):
 		jump_counter += 1
