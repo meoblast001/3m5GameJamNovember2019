@@ -6,18 +6,25 @@ export var SPEED = 400 # pixels / sec
 export var JUMP_HEIGHT = 400
 export var IN_AIR_DELAY = 0.2
 export var MAX_JUMP_COUNT = 2
+export var DEATH_HEIGHT = 1000
 var screen_size
 var jump_counter = 0
 var in_air_timer : float
 var walkAnimationPlaying : bool
 var last_wall = 'none' # or left or right (maybe use enum)
 var last_jumped_wall = 'none' # or left or right (maybe use enum)
+var number_of_deaths = 0
 
+var start_pos = position
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+
+func reset():
+	position = start_pos
+	velocity = Vector2()
 
 func handleGravity(delta):
 	if is_on_floor():
@@ -85,8 +92,14 @@ func handleWalkAnimation():
 			$AnimationPlayer.seek(0, true)
 			$AnimationPlayer.stop()
 	
+func handleDeath():
+	if position.y > DEATH_HEIGHT:
+		number_of_deaths += 1
+		reset()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	handleDeath()
 	handleGravity(delta)
 	handleWalkInput()
 	handleJump(delta)

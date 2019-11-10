@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TileMaps/Kenny_RedTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameEssentials/GameEssentials.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -17,6 +17,4 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-GRAVITY = 1000.0
-JUMP_HEIGHT = 300
+[node name="GameEssentials" parent="." instance=ExtResource( 2 )]

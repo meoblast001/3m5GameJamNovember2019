@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TileMaps/Walls_Ground_Tilemap.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameEssentials/GameEssentials.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,7 +24,9 @@ tile_data = PoolIntArray( -983012, 2, 65536, -983011, 2, 65536, -983010, 2, 6553
 position = Vector2( 64.5991, 513.857 )
 format = 1
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="GameEssentials" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="GameEssentials" index="0"]
 position = Vector2( 159.964, 464.223 )
-GRAVITY = 800.0
-JUMP_HEIGHT = 400
+
+[editable path="GameEssentials"]
