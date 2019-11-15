@@ -292,8 +292,8 @@ shape = SubResource( 1 )
 [node name="Goal" parent="." instance=ExtResource( 20 )]
 position = Vector2( -325.486, 742.05 )
 [connection signal="activation_changed" from="SwitchGroup1/Switch" to="SwitchGroup1/ToggledNodes" method="_toggle_nodes"]
-[connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes" method="_toggle_nodes"]
+[connection signal="activation_changed" from="SwitchGroup2/Switch" to="SwitchGroup2/ToggledNodes2" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup3/Switch" to="SwitchGroup3/ToggledNodes" method="_toggle_nodes"]
 [connection signal="activation_changed" from="SwitchGroup4/Switch" to="SwitchGroup4/ToggledNodes" method="_toggle_nodes"]
 

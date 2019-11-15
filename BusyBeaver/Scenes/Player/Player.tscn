@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/torch.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/TorchLight/TorchLight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/chainsaw.png" type="Texture" id=6]
-[ext_resource path="res://Assets/BG Music/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/BG Music/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/SFX/sfx_movement_jump1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/SFX/sfx_sounds_falling2.wav" type="AudioStream" id=9]
 
