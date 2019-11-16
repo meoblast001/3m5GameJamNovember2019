@@ -1,0 +1,161 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Beaver.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Assets/torch.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/TorchLight/TorchLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/chainsaw.png" type="Texture" id=6]
+[ext_resource path="res://Assets/BG Music/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/SFX/sfx_movement_jump1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/SFX/sfx_sounds_falling2.wav" type="AudioStream" id=9]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.6609
+height = 16.1334
+
+[sub_resource type="Animation" id=2]
+resource_name = "Double Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 4, 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Wall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+GRAVITY = 2200.0
+SPEED = 360
+JUMP_HEIGHT = 650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, -5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+hframes = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Double Jump" = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Walk = SubResource( 4 )
+anims/Wall = SubResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="InventoryScript" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Torch" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -40 )
+texture = ExtResource( 4 )
+hframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TorchLight" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 0, 40 )
+
+[node name="Chainsaw" type="Sprite" parent="."]
+position = Vector2( 0, -40 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemIndicator" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -55.0
+margin_right = 15.0
+margin_bottom = -25.0
+color = Color( 1, 1, 1, 0.196078 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -6.0
+autoplay = true
+
+[node name="SFX-Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -16.0
+
+[node name="SFX-Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -12.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
